@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghoul Republic — The Collection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <nav>
+    <a href="#" class="on">The collection</a>
+    <a href="#">Official store</a>
+  </nav>
+  <a class="logo" href="#" aria-label="Ghoul Republic"><img src="img/skull.png" alt="Ghoul Republic"></a>
+  <button class="bag-btn" id="bagBtn">Bag (<span id="bagCount">0</span>)</button>
+</header>
+
+<main id="stage">
+  <h1 class="title">The collection.</h1>
+
+  <section class="rail-wrap" id="railWrap">
+    <div class="rail" id="rail"><div class="line"></div></div>
+  </section>
+
+  <section class="detail" id="detail" hidden>
+    <button class="back" id="back">← Back to the rail</button>
+    <div class="d-hang" id="dHang"></div>
+    <div class="d-info">
+      <h2 id="dName"></h2>
+      <p class="price" id="dPrice"></p>
+      <div class="row"><button class="seg on" data-side="front">Front</button><button class="seg" data-side="back">Back</button></div>
+      <p class="lbl">Size</p>
+      <div class="row" id="dSizes"></div>
+      <button class="add" id="dAdd">Add to bag</button>
+      <p class="fine">Heavyweight cotton. Oversized fit. Fear is law.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span id="counter">01 / 10</span>
+    <span class="hint">hover a piece to turn it · click to open</span>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
