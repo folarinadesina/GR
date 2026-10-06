@@ -65,14 +65,24 @@ function open(i) {
   size = 'M';
   $('#dSizes').innerHTML = SIZES.map(s => `<button class="size${s === size ? ' on' : ''}">${s}</button>`).join('');
   wrap.style.opacity = 0; wrap.style.pointerEvents = 'none';
-  $('.title').textContent = 'The collection. / ' + current.name;
   detail.hidden = false;
 }
 function close() {
   detail.hidden = true;
   wrap.style.opacity = 1; wrap.style.pointerEvents = '';
-  $('.title').textContent = 'The collection.';
 }
+
+// ---- intro / home
+const intro = $('#intro');
+// from a product page the logo goes back to the rail; from the rail it goes to the intro
+function goHome() {
+  if (!detail.hidden) { close(); return; }
+  intro.classList.remove('gone');
+}
+function enter() { intro.classList.add('gone'); }
+$('#enter').onclick = enter;
+intro.addEventListener('click', e => { if (e.target === intro) enter(); });
+$('#home').addEventListener('click', e => { e.preventDefault(); goHome(); });
 $('#back').onclick = close;
 addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 document.querySelectorAll('.seg').forEach(b => b.onclick = () => {

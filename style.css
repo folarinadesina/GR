@@ -16,6 +16,14 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 
 .title{font-size:15px;font-weight:600;padding:18px 32px 0}
 
+/* ---------- intro ---------- */
+.intro{position:fixed;inset:0;z-index:4;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 40%,#2a0006 0%,#0a0000 70%);transition:opacity .8s,visibility .8s}
+.intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.wordmark{width:min(78vw,560px);max-height:46vh;object-fit:contain;height:auto;animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 0 30px rgba(200,16,46,.35))}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.96);filter:blur(8px)}to{opacity:1;transform:none}}
+.enter{position:absolute;left:50%;bottom:12vh;margin-left:-66px;width:132px;padding-left:0!important;padding-right:0!important;border:1px solid #fff;color:#fff;padding:12px 40px;border-radius:99px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;animation:rise 1.4s .6s cubic-bezier(.2,.8,.2,1) both;transition:background .3s,color .3s}
+.enter:hover{background:#fff;color:#000}
+
 /* ---------- rail ---------- */
 .rail-wrap{position:relative;height:62vh;min-height:430px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;transition:opacity .4s}
 .rail-wrap::-webkit-scrollbar{display:none}
